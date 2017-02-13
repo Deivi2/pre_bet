@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="bets-buttons">
+        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+            <div class="btn-group" role="group">
+                <button [routerLink]="['/nbabets/incoming']" type="button" class="btn btn-default">All games</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button [routerLink]="['/nbabets/played']" type="button" class="btn btn-default">Played games</button>
+            </div>
+            <div class="btn-group" role="group">
+                <button  type="button" class="btn btn-default">Now playing</button>
+            </div>
+            <input type="text" class="form-control" placeholder="Search game">
+        </div>
+    </div>
+
+    <router-outlet></router-outlet>
+
+</div>

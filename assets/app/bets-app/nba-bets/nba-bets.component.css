@@ -1,0 +1,10 @@
+.container{
+    padding: 100px 100px 100px 250px
+}
+.container .games{
+   text-align: center;
+}
+.bets-buttons{
+    padding-left: 10%;
+
+}

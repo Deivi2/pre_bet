@@ -1,0 +1,16 @@
+<nav>
+    <div class="nav-icon">
+        <img src="https://images.images4us.com/888sport/en/888sport_Homepage_SEO-slider_3_tcm853-209905.jpg" style="width: 200px; height: 150px; "/>
+    </div>
+    <div class="side-nav">
+        <div><a [routerLink]="['/']">Home</a></div>
+        <div><a>Login</a></div>
+        <div ><a >Profile</a></div>
+        <div [className]="my_Class" (click)="setState()"><a>Bets {{getButtonText()}}</a></div>
+        <div [className]="my_Class" class="nav-bets" *ngIf="isOn" >
+            <a [routerLink]="['/nbabets']">Nba</a><br/>
+            <a [routerLink]="['/nbabets', 30]">Other</a>
+        </div>
+        <div><a>Logout</a></div>
+    </div>
+</nav>

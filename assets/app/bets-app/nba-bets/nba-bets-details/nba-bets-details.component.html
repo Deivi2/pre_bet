@@ -1,0 +1,54 @@
+
+
+<div class="details container">
+
+    <div class="card">
+
+        <h3 class="card-header">Bet on </h3>
+        <div class="card-block">
+            <h4 class="card-title">Away Team {{posts.data}} Home Team</h4>
+            <p class="card-text">Chose you bet below for games on {{posts.data| away}} and {{posts.data| home}} </p>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-block">
+                    <h3 class="card-title">{{posts.data| away}}</h3>
+                    <a class="btn btn-outline-danger btn-sm" (click)="setState()" (click)=" setResultBetForAway()">Result</a>
+                    <a  class="btn btn-outline-danger btn-sm" (click)="setState()" (click)=" setWinnerBetForAway()">Winner</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-block">
+                    <h3 class="card-title">{{posts.data| home}}</h3>
+                    <a class="btn btn-outline-danger btn-sm" (click)="setState()" (click)=" setResultBetForHome()">Result</a>
+                    <a  class="btn btn-outline-danger btn-sm" (click)="setState()" (click)=" setWinnerBetForHome()" >Winner</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="card">
+        <a href="#" [routerLink]="['/nbabets/incoming']" class="btn btn-default">Go back</a>
+    </div>
+    <br><br><br><br><br>
+
+        <bet-slip-holder [hidden]="!isOn"
+                         [bets]="bets"
+                   >
+        </bet-slip-holder>
+
+</div>
+
+
+
+
+
+
+
+
+

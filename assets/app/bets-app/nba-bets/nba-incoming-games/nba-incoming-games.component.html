@@ -1,8 +1,11 @@
-<h2>All Games</h2>
-<div *ngFor="let post of posts let i = index;">
-    <div class="card card-block">
+<div class="card-group">
+    <div *ngFor="let post of posts let i = index;">
         <a href="" [routerLink]="['/nbabets', i]">
-            <div class="games">{{post.data | uppercase}}</div>
+            <div class="card">
+                <div class="card-block">
+                    {{post.data}}
+                </div>
+            </div>
         </a>
     </div>
 </div>

@@ -1,0 +1,23 @@
+<aside>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div *ngIf="!loggedIn()" class="row">
+                <div class="col-sm-5">
+                    <input type="email" class="form-control form-control-sm" placeholder="email"
+                           formControlName="email">
+                </div>
+                <div class="col-sm-5">
+                    <input type="password" class="form-control form-control-sm" placeholder="password"
+                           formControlName="password">
+                </div>
+                <button class="btn btn-secondary btn-sm" type="submit">Login</button>
+            </div>
+
+            <div class="logged" *ngIf="loggedIn()">
+                Welcome {{userMail}} &#09;
+                <button class="btn btn-secondary btn-sm" type="submit" (click)="logOut()">Logout</button>
+            </div>
+
+        </div>
+    </form>
+</aside>

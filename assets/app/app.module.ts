@@ -13,8 +13,17 @@ import {getAwayTeamPipe} from "./bets-app/nba-bets/nba-bets-details/nba-get-away
 import {nbaPlayedGamesComponent} from "./bets-app/nba-bets/nba-played-games/nba-played-games.component";
 import {nbaIncomeingGamesComponent} from "./bets-app/nba-bets/nba-incoming-games/nba-incoming-games.component";
 import {betSlipComponent} from "./bet-slip/bet-slip.component";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {betSlipHolderComponent} from "./bet-slip/bet-slip-holder/bet-slip-holder.component";
+import {searchGamePipe} from "./bets-app/nba-bets/nba-incoming-games/search-game.pipe";
+import {userRegisterComponent} from "./auth/register/register.component";
+import {AuthService} from "./auth/auth.service";
+import {userLogingInComponent} from "./auth/login/login.component";
+import {nbaPlayingGamesComponent} from "./bets-app/nba-bets/nba-playing-games/nba-playing-games.component";
+import {loginTopBarComponent} from "./auth/login-top-bar/login-top-bar.component";
+import {nbaTodayGamesComponent} from "./bets-app/nba-bets/nba-today-games/nba-today-games.component";
+import {betService} from "./bet-slip/bet.service";
+import {userProfileComponent} from "./bets-app/user-profile/user-profile.component";
 
 
 @NgModule({
@@ -28,15 +37,23 @@ import {betSlipHolderComponent} from "./bet-slip/bet-slip-holder/bet-slip-holder
         nbaPlayedGamesComponent,
         nbaIncomeingGamesComponent,
         betSlipComponent,
-        betSlipHolderComponent
+        betSlipHolderComponent,
+        searchGamePipe,
+        userRegisterComponent,
+        userLogingInComponent,
+        nbaPlayingGamesComponent,
+        loginTopBarComponent,
+        nbaTodayGamesComponent,
+        userProfileComponent
     ],
     imports: [
         BrowserModule,
         FormsModule,
         routing,
-        HttpModule
+        HttpModule,
+        ReactiveFormsModule
     ],
-    providers: [PostsService,
+    providers: [PostsService,AuthService,betService,
         [{provide: LocationStrategy, useClass: HashLocationStrategy}]
     ],
     bootstrap: [AppComponent]

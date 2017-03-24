@@ -4,12 +4,20 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
 var appRoutes = require('./routes/app');
 var betsRoutes = require('./routes/bets');
-var betsRoutesDetails = require('./routes/betsdetails');
+var betsRoutesDetails = require('./routes/bets-details');
+var userAuth = require('./routes/userAuth');
+var bets_played = require('./routes/bets-payed');
+var bets_playing = require('./routes/bets-playing');
+var bets_playing_today = require('./routes/bets-today');
+var profile = require('./routes/profile');
+
 
 var app = express();
+mongoose.connect('localhost:27017/bet-app');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -40,6 +48,12 @@ app.use(function (req, res, next) {
 });
 
 
+app.use('/profile', profile);
+app.use('/nbabets', bets_playing_today);
+app.use('/nbabets', bets_playing);
+app.use('/nbabets', bets_played);
+
+app.use('/user', userAuth);
 app.use('/nbabets/:id', betsRoutesDetails);
 app.use('/nbabets', betsRoutes);
 app.use('/', appRoutes);
@@ -50,7 +64,6 @@ app.use('/', appRoutes);
 app.use(function(req, res, next) {
   return res.render('index');
 });
-
 
 
 module.exports = app;

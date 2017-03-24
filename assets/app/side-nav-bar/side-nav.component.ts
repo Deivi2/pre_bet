@@ -1,4 +1,5 @@
 import {Component, OnInit} from "@angular/core";
+import {AuthService} from "../auth/auth.service";
 
 
 @Component({
@@ -36,4 +37,11 @@ export class sideNavComponent implements OnInit{
             this.my_Class='styleOne';
         }
     }
+
+    constructor(private authService: AuthService){}
+
+    isLoggedIn(){
+        return this.authService.isLoggedin()
+    }
+
 }

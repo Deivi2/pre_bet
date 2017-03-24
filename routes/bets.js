@@ -13,17 +13,23 @@ router.get('/', function (req, res, next) {
     };
     stattleship.games('basketball', 'nba', params).then(function (games) {
 
-
         games.forEach(function (element, index, array, err) {
-            games_array.push({data:element.label});
+            games_array.push({
+                data: element.name,
+                label: element.label,
+                interval: element.interval,
+                slug: element.slug,
+                status: element.status,
+                score: element.score
+            });
+
         });
 
         if (games_array) {
-         //   console.log(games_array);
-             res.setHeader('Content-Type', 'application/json');
-             res.status(201).send(JSON.stringify(games_array));
+        //       console.log(games_array);
+            res.setHeader('Content-Type', 'application/json');
+            res.status(201).send(games_array.reverse());
         }
-
         else {
             return res.status(401).json({
                 title: 'Not authenticated',
@@ -32,6 +38,8 @@ router.get('/', function (req, res, next) {
         }
     });
 });
+
+
 
 /* GET home page. */
 

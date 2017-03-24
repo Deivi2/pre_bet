@@ -3,9 +3,8 @@ nav {
     position: fixed;
     float: left;
     border: 1px ;
-    border-style: solid;
     padding:0px 50px 100% 50px;
-    background-color: dimgray;
+    background-color: #262626;
 }
 
 nav .side-nav{
@@ -17,7 +16,7 @@ nav .side-nav{
     padding: 10px;
     margin: 0px -50px 0px -50px;
     color: azure;
-    border-bottom:solid black 0.5px ;
+    border-bottom:solid #FFB928 2px ;
 }
 nav .nav-icon{
     margin: 0px -50px 0px -50px;
@@ -33,5 +32,16 @@ nav .nav-bets{
 }
 
 .styleTwo{
-    background-color: grey;
+    background-color: #3F3F3F;
+}
+
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: white;
+    text-decoration: rebeccapurple;
 }

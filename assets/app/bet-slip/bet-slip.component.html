@@ -1,11 +1,9 @@
-<div class="container slip">
-    <div class="card card-inverse card-primary mb-3 text-center">
-        <div class="card-block">
-            <blockquote class="card-blockquote">
-                <p>New {{getBet}} bet for {{getGame}} game</p>
-                <p>On <cite>{{getTeam}}</cite> team</p>
-            </blockquote>
-        </div>
-    </div>
+<div class="alert alert-warning" role="alert">
+        <label> New <strong>{{getBet}} </strong> bet On <cite>{{getTeam}}</cite> team </label>
+            <input
+                    *ngIf="textForResultBet(getBet)"
+                    [(ngModel)]="result"
+            >
+            <br/><br/>
+            <button (click)="submitBet()" class="btn btn-outline-danger btn-sm">Confirm</button>
 </div>
-

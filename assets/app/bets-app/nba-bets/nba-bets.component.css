@@ -1,10 +1,21 @@
 .container{
-    padding: 100px 100px 100px 250px
+ padding-left: 250px;
+ padding-top: 100px;
+
 }
 .container .games{
-   text-align: center;
+ text-align: center;
 }
 .bets-buttons{
-    padding-left: 10%;
 
+}
+a:link {
+ color: black;
+ text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+ color: black;
+ text-decoration: rebeccapurple;
 }

@@ -1,11 +1,10 @@
-<div class="container">
-
-    <bet-slip
-            *ngFor="let b of bets"
-            [bets]="b"
-    >
-    </bet-slip>
-
-
+<div class="card" style="background-color: #333; border-color: #333;">
+    <h5 class="card-header" style="background-color: #333; border-color: #333;">Selections </h5>
+    <div class="card-block">
+        <bet-slip
+                *ngFor="let b of bets"
+                [bets]="b">
+        </bet-slip>
+    </div>
 </div>
 

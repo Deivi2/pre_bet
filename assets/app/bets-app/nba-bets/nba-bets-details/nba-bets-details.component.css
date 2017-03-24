@@ -1,5 +1,6 @@
 .container{
-     padding: 100px 100px 100px 250px
+     padding: 100px 160px 100px 250px;
+     color: white;
 }
 
 .card-title{
@@ -8,4 +9,10 @@
 
 .card-text{
      text-align: center;
+}
+
+bet-slip-holder {
+     position: absolute;
+     width: 250px;
+     right: -100px;
 }

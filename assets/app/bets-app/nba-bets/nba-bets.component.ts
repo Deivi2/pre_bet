@@ -19,11 +19,9 @@ export class betsComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.postsService.getAllGames()
-            .subscribe(posts => {
-            this.posts = posts
-        })
-
+        // this.postsService.getAllGames()
+        //     .subscribe(posts => {
+        //     this.posts = posts
+        // })
     }
-
 }

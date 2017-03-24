@@ -1,0 +1,19 @@
+aside{
+    padding: 15px 100px 40px 0px;
+    border: solid 1px black;
+    background-color: #262626;
+
+}
+aside .row{
+    float: right;
+
+}
+
+aside .logged{
+    color: white;
+}
+
+aside .logged button{
+    margin-left: 50px;
+}
+

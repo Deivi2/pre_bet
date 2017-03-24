@@ -7,8 +7,6 @@ export class getAwayTeamPipe implements PipeTransform {
         if (!value) return value;
 
         var index = value.indexOf('vs');
-
         return value.substr(0, index)
-
     }
 }

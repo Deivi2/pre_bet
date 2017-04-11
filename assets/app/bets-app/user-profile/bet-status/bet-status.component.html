@@ -1,0 +1,24 @@
+
+
+<div class="container">
+        <div *ngFor="let b of bets | slice:1:2;">
+            <div class="card" style="background-color: #262626; border-color: #333;">
+                <h3 class="card-header" style="background-color: #262626; border-color: #FFB928;">Bet {{b.label}} status </h3>
+                <div class="card-block">
+                    <p class="card-text">status: {{b.status}} </p>
+                    <p class="card-text">score: away {{b.score}} home </p>
+
+                    {{getBet(b)}}
+                </div>
+            </div>
+        </div>
+    <div *ngFor="let b of betsData ;">
+        {{getDataBet(b)}}
+        <div class="card" style="background-color: #262626; border-color: #333;">
+            <div class="card-block">
+                <p class="card-text">you bet for: {{b.team}} team </p>
+                <p class="card-text">your status: {{didYouWin}} </p>
+            </div>
+        </div>
+    </div>
+</div>

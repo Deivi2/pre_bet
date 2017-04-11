@@ -1,14 +1,21 @@
+
+
 <div class="container">
+
+
+
     <table class="table table-hover table-inverse">
         <thead>
         <tr>
             <th>#</th>
-            <th class="scndrow">Away team Home Team Time</th>
+            <th class="scndrow">Away vs Home Time</th>
             <th>Team</th>
             <th>Bet</th>
-            <th>Result</th>
-            <th>Score</th>
-            <th>Status</th>
+            <th>Predicted result</th>
+            <th>Bet status</th>
+
+            <!--<th>Score</th>-->
+            <!--<th>Status</th>-->
         </tr>
         </thead>
         <tbody *ngFor="let b of bets let i = index;">
@@ -18,11 +25,14 @@
             <td>{{b.team}}</td>
             <td>{{b.bet}}</td>
             <td>{{b.result}}</td>
-            <td>{{b.score}}</td>
-            <td>{{b.status}}</td>
-            <td>{{b.slug}}</td>
-
+            <td><a type="button"
+                   class="btn btn-outline-danger btn-sm " [routerLink]="['/status/game', b.slug]">Press</a></td>
+            <!--<td>{{b.score}}</td>-->
+            <!--<td>{{b.status}}</td>-->
+            <!--<td>{{b.slug}}</td>-->
         </tr>
         </tbody>
     </table>
 </div>
+
+

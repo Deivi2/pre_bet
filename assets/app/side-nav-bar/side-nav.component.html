@@ -10,7 +10,6 @@
         <div *ngIf="isLoggedIn()" [className]="my_Class" (click)="setState()"><a>Bets {{getButtonText()}}</a></div>
         <div [className]="my_Class" class="nav-bets" *ngIf="isOn && isLoggedIn()" >
             <a [routerLink]="['/nbabets/today']">Nba</a><br/>
-            <a [routerLink]="['/nbabets', 30]">Other</a>
         </div>
     </div>
 </nav>

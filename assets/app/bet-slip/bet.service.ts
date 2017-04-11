@@ -58,4 +58,12 @@ export class betService{
         })
             .catch((error: Response) => Observable.throw(error.json()));
     }
+
+
+    getBetStatus(id){
+        const token = localStorage.getItem('token') ? '?token=' + localStorage.getItem('token') : '';
+
+        return this.http.get(`http://localhost:3000/status/game/${id}`+ token)
+            .map(res => res.json())
+    }
 }

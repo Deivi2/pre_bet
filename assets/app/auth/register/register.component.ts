@@ -30,6 +30,7 @@ export class userRegisterComponent implements OnInit{
                 error => console.error((error))
             );
         this.myForm.reset();
+
     }
 
     ngOnInit() {

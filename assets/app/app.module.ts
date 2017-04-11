@@ -24,6 +24,7 @@ import {loginTopBarComponent} from "./auth/login-top-bar/login-top-bar.component
 import {nbaTodayGamesComponent} from "./bets-app/nba-bets/nba-today-games/nba-today-games.component";
 import {betService} from "./bet-slip/bet.service";
 import {userProfileComponent} from "./bets-app/user-profile/user-profile.component";
+import {betStatusComponent} from "./bets-app/user-profile/bet-status/bet-status.component";
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import {userProfileComponent} from "./bets-app/user-profile/user-profile.compone
         nbaPlayingGamesComponent,
         loginTopBarComponent,
         nbaTodayGamesComponent,
-        userProfileComponent
+        userProfileComponent,
+        betStatusComponent
     ],
     imports: [
         BrowserModule,

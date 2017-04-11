@@ -1,7 +1,7 @@
 import {Component, OnInit} from "@angular/core";
 import {bets_slip} from "../../bet-slip/bet-slip-bet.model";
 import {betService} from "../../bet-slip/bet.service";
-
+import $ = require("jquery");
 
 @Component({
     selector: 'user-profile-app',
@@ -22,5 +22,10 @@ export class userProfileComponent implements  OnInit{
                     this.bets = bets
                 }
             );
+
     }
+
+
+
+
 }

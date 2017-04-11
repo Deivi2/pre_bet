@@ -8,6 +8,7 @@ import {userLogingInComponent} from "../../auth/login/login.component";
 import {nbaPlayingGamesComponent} from "./nba-playing-games/nba-playing-games.component";
 import {nbaTodayGamesComponent} from "./nba-today-games/nba-today-games.component";
 import {userProfileComponent} from "../user-profile/user-profile.component";
+import {betStatusComponent} from "../user-profile/bet-status/bet-status.component";
 
 
 export const nbaRoutes: Routes = [
@@ -24,5 +25,6 @@ export const nbaRoutes: Routes = [
     {path: 'nbabets/:id', component: nbaBetsDetailsComponent},
     {path: 'user/register', component: userRegisterComponent},
     {path: 'user/login', component: userLogingInComponent},
-    {path: 'profile', component: userProfileComponent}
+    {path: 'profile', component: userProfileComponent},
+    {path: 'status/game/:id', component: betStatusComponent}
 ];

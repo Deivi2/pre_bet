@@ -1,9 +1,20 @@
-<div class="alert alert-warning" role="alert">
-        <label> New <strong>{{getBet}} </strong> bet On <cite>{{getTeam}}</cite> team </label>
-            <input
-                    *ngIf="textForResultBet(getBet)"
-                    [(ngModel)]="result"
-            >
-            <br/><br/>
-            <button (click)="submitBet()" class="btn btn-outline-danger btn-sm">Confirm</button>
-</div>
+
+    <div class="card card-outline-warning mb-3 text-center">
+        <div *ngIf="!pressed" class="card-block">
+            <blockquote class="card-blockquote">
+                <p> New <strong>{{getBet}} </strong> bet On <strong>{{getTeam}}</strong> team</p>
+                <input
+                        *ngIf="textForResultBet(getBet)"
+                        [(ngModel)]="result"
+                >
+                <a (click)="buttonPressed()" (click)="submitBet()" type="button"
+                        class="btn btn-outline-danger btn-sm ">add bet
+                </a>
+            </blockquote>
+        </div>
+        <div *ngIf="pressed" class="card-block">
+            <blockquote class="card-blockquote">
+                <p>Your bet for <strong>{{getBet}} {{getTeam}}</strong> team is added</p>
+            </blockquote>
+        </div>
+    </div>

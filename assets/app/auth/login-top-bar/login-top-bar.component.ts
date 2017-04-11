@@ -37,19 +37,23 @@ export class loginTopBarComponent implements OnInit{
                   //  console.log('user mail :' , this.userMail);
                     this._userMail = data.userEmail;
                    // this.router.navigateByUrl('/');
+                    this.router.navigateByUrl('/');
                 } ,
                 error => console.error((error))
             );
         this.myForm.reset();
         this.myForm.reset();
+
     }
 
     logOut(){
-            this.authService.logout()
+            this.authService.logout();
+            this.router.navigate(['/'])
     }
 
     loggedIn(){
         return this.authService.isLoggedin()
+
     }
 
     private _userMail = localStorage.getItem('userEmail');

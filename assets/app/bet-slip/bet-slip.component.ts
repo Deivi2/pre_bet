@@ -48,7 +48,7 @@ export class betSlipComponent implements OnInit{
     }
 
 
-    submitBet(result){
+    submitBet(){
         const bet = new bets_slip(this.getGame, this.getTeam, this.getBet, this.result, this.getScore, this.getStatus, this.getSlug, localStorage.getItem('userId') )
         this.betService.addBet(bet)
             .subscribe(
@@ -57,6 +57,13 @@ export class betSlipComponent implements OnInit{
             );
 
         console.log('bet obj: ', bet)
+    }
+
+
+    pressed: boolean = false
+
+    buttonPressed(){
+        this.pressed = true
     }
 
 

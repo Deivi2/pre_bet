@@ -1,5 +1,4 @@
-import {Component, OnInit, ElementRef, Directive} from "@angular/core";
-import {Http} from "@angular/http";
+import {Component, OnInit} from "@angular/core";
 import 'rxjs/Rx';
 import {PostsService} from "./nba-bets.service";
 
@@ -14,14 +13,9 @@ export class betsComponent implements OnInit {
 
     posts: any = [];
 
-    constructor(private postsService: PostsService) {
-
+    constructor() {
     }
 
     ngOnInit(): void {
-        // this.postsService.getAllGames()
-        //     .subscribe(posts => {
-        //     this.posts = posts
-        // })
     }
 }

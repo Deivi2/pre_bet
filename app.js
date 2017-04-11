@@ -14,6 +14,7 @@ var bets_played = require('./routes/bets-payed');
 var bets_playing = require('./routes/bets-playing');
 var bets_playing_today = require('./routes/bets-today');
 var profile = require('./routes/profile');
+var status = require('./routes/bet-status');
 
 
 var app = express();
@@ -47,7 +48,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-
+app.use('/status', status);
 app.use('/profile', profile);
 app.use('/nbabets', bets_playing_today);
 app.use('/nbabets', bets_playing);

@@ -26,5 +26,5 @@ export const nbaRoutes: Routes = [
     {path: 'user/register', component: userRegisterComponent},
     {path: 'user/login', component: userLogingInComponent},
     {path: 'profile', component: userProfileComponent},
-    {path: 'status/game/:id', component: betStatusComponent}
+    {path: 'status/game/:id/:id2', component: betStatusComponent}
 ];

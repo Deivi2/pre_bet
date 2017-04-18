@@ -1,6 +1,7 @@
 import {Component, OnInit, Input} from "@angular/core";
 import {betService} from "../../../bet-slip/bet.service";
 import {ActivatedRoute} from "@angular/router";
+import {filter} from "rxjs/operator/filter";
 
 
 @Component({
@@ -13,42 +14,50 @@ export class betStatusComponent implements OnInit{
     constructor(private betService: betService,private route: ActivatedRoute){}
 
     private sub: any;
-    bets : string;
+
     b : string;
-    betsData : any;
     didYouWin: any;
     score : any;
     result : any;
     status: any;
+    bets : string;
+    betsData = [];
+
 
     ngOnInit(): void {
         this.sub = this.route.params.subscribe(params => {
             let id = params['id'];
+            let betId = params['id2'];
             // Retrieve with Id route param
             this.betService.getBetStatus(id)
                 .subscribe(posts => {
                     this.bets = posts;
-                    this.betsData = posts[0];
-                    console.log('debug posts.bet: ', posts[0])
+                    this.betsData.push(posts[0][betId]);
+                    console.log('debug bets: ', this.bets);
+                    console.log('debug posts.bet: ', this.betsData);
+                   // console.log('id ', betId);
                 });
         });
     }
 
 
-
     getBet(b: any){
+        console.log('getBet(): ' , b);
         console.log('try to get : ', b.label);
         this.score = b.score;
         this.status = b.status
     }
 
     getDataBet(b: any){
-      console.log('getBet(): ' , b[0]);
+      console.log('getDataBet(): ' , b);
       console.log('bet status', this.status);
+        console.log('bet ', b.bet);
       if(this.status == 'closed') {
           if (b.bet == 'result') {
+              console.log('score ', this.score , ' b: ', b);
               this.ifResult(this.score, b)
           } else if (b.bet == 'winner') {
+              console.log('winner score ', this.score , ' b: ', b);
               this.ifWinner(this.score, b)
           }
       }else {

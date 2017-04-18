@@ -7,15 +7,14 @@ var StattleshipAPI = require('node-stattleship');
 
 var stattleship = new StattleshipAPI('2d1000d4f7559cf7d170534633ddcd78');
 
-router.get('/game/:id', function (req, res, next) {
+router.get('/game/:id/:betIda', function (req, res, next) {
 
 
-     var games_array = [];
-
+    var games_array = [];
     var id = req.params.id;
     var decoded = jwt.decode(req.query.token);
 
-    Bet.find({user: decoded.user._id},{slug: id})
+    Bet.find({user: decoded.user._id})
         .populate('user')
         .exec(function (err, bets) {
             var betsObj = [];
@@ -34,6 +33,7 @@ router.get('/game/:id', function (req, res, next) {
 
 
     console.log("profile id: ",  req.params.id);
+    console.log('idaaa', req.params.betIda);
 
     var params = {
         game_id: req.params.id
@@ -56,9 +56,6 @@ router.get('/game/:id', function (req, res, next) {
             // console.log(element.status);
 
         });
-
-
-
        res.status(201).send(games_array)
     });
 

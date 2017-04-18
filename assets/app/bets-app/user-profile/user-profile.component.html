@@ -2,8 +2,6 @@
 
 <div class="container">
 
-
-
     <table class="table table-hover table-inverse">
         <thead>
         <tr>
@@ -26,7 +24,7 @@
             <td>{{b.bet}}</td>
             <td>{{b.result}}</td>
             <td><a type="button"
-                   class="btn btn-outline-danger btn-sm " [routerLink]="['/status/game', b.slug]">Press</a></td>
+                   class="btn btn-outline-danger btn-sm " [routerLink]="['/status/game', b.slug, i]">Press</a></td>
             <!--<td>{{b.score}}</td>-->
             <!--<td>{{b.status}}</td>-->
             <!--<td>{{b.slug}}</td>-->

@@ -24,8 +24,4 @@ export class userProfileComponent implements  OnInit{
             );
 
     }
-
-
-
-
 }

@@ -63,7 +63,7 @@ export class betService{
     getBetStatus(id){
         const token = localStorage.getItem('token') ? '?token=' + localStorage.getItem('token') : '';
 
-        return this.http.get(`http://localhost:3000/status/game/${id}`+ token)
+        return this.http.get(`http://localhost:3000/status/game/${id}/:id` + token)
             .map(res => res.json())
     }
 }
